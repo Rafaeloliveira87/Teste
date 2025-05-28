@@ -11,8 +11,6 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'sua_chave_secreta_padra
 
 db = SQLAlchemy(app)
 
-
-
 # --- DEFINIÇÃO DO MODELO (SUA TABELA 'BRINCADEIRAS') ---
 class Brincadeira(db.Model):
     __tablename__ = 'brincadeiras'
@@ -25,7 +23,6 @@ class Brincadeira(db.Model):
         return f'<Brincadeira {self.nome}>'
 
 # --- ROTAS DA APLICAÇÃO ---
-# (O restante do seu código de rotas continua igual)
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -85,5 +82,5 @@ def exibir_descricao():
 # --- INICIALIZAÇÃO DA APLICAÇÃO LOCAL (SEM ALTERAÇÃO) ---
 if __name__ == '__main__':
     # Esta parte é só para rodar localmente com sqlite.
-    # No Render, o gunicorn vai iniciar o app e a criação das tabelas já foi feita acima.
+    # No Render, o gunicorn vai iniciar o app. A criação das tabelas é feita por create_db.py.
     app.run(debug=True)
