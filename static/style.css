@@ -20,8 +20,8 @@ body {
     align-items: center; /* Centraliza o conteúdo horizontalmente */
     min-height: 100vh; /* Ocupa a altura total da viewport */
     box-sizing: border-box;
-    /* Adicionar um padrão sutil ou gradiente se quiser algo mais dinâmico, por exemplo: */
-    /* background: linear-gradient(to bottom right, var(--light-yellow), #fdf5e6); */
+    /* Gradiente sutil para um toque dinâmico */
+    background: linear-gradient(to bottom right, var(--light-yellow) 0%, #fdf5e6 100%);
 }
 
 h1 {
@@ -29,7 +29,7 @@ h1 {
     text-align: center;
     margin-bottom: 30px;
     padding-bottom: 10px;
-    border-bottom: 2px solid var(--primary-orange); /* Linha laranja abaixo do título */
+    border-bottom: 3px solid var(--primary-orange); /* Linha laranja mais grossa abaixo do título */
     width: fit-content; /* Ajusta a largura da linha ao texto */
     margin-left: auto;
     margin-right: auto;
@@ -41,32 +41,32 @@ h1 {
     padding: 0;
     margin: 15px 0;
     width: 100%;
-    max-width: 550px; /* Limita a largura para melhor leitura */
+    max-width: 550px;
     text-align: center;
 }
 
 .flashes li {
     padding: 12px 20px;
-    border-radius: 10px; /* Cantos mais arredondados */
+    border-radius: 10px;
     margin-bottom: 10px;
     font-weight: bold;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
-    transition: transform 0.2s ease-in-out; /* Efeito dinâmico ao passar o mouse */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease-in-out;
 }
 
 .flashes li:hover {
-    transform: translateY(-2px); /* Eleva um pouco a caixa */
+    transform: translateY(-2px);
 }
 
 .flashes .error {
-    background-color: #ffe6e6; /* Fundo vermelho claro */
-    color: #cc0000; /* Texto vermelho escuro */
+    background-color: #ffe6e6;
+    color: #cc0000;
     border: 1px solid #ff4500;
 }
 
 .flashes .success {
-    background-color: #e6ffe6; /* Fundo verde claro */
-    color: #2e8b57; /* Texto verde escuro */
+    background-color: #e6ffe6;
+    color: #2e8b57;
     border: 1px solid #2e8b57;
 }
 
@@ -74,13 +74,13 @@ h1 {
 form, .content-box, .adicionar-container, .descricao-container, .selecionar-container {
     background-color: var(--white);
     padding: 30px;
-    border-radius: 15px; /* Cantos bem arredondados */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18); /* Sombra mais suave e evidente */
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
     width: 100%;
-    max-width: 550px; /* Largura máxima para formulários e caixas de conteúdo */
+    max-width: 550px;
     margin-bottom: 25px;
     box-sizing: border-box;
-    border: 1px solid var(--border-orange); /* Borda com a cor da borda do logo */
+    border: 2px solid var(--primary-orange); /* Borda laranja mais evidente */
 }
 
 /* Centraliza os labels e inputs dentro de divs (se usados) */
@@ -100,22 +100,22 @@ label {
 input[type="text"],
 textarea,
 select {
-    width: calc(100% - 24px); /* Ocupa quase toda a largura, com padding e borda */
+    width: calc(100% - 24px);
     padding: 12px;
     margin-top: 5px;
-    border: 2px solid var(--primary-orange); /* Borda laranja nos inputs */
+    border: 2px solid var(--dark-blue); /* Borda azul escuro nos inputs */
     border-radius: 8px;
     box-sizing: border-box;
     font-size: 1em;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Efeito dinâmico */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input[type="text"]:focus,
 textarea:focus,
 select:focus {
-    border-color: var(--dark-blue); /* Borda azul ao focar */
-    box-shadow: 0 0 8px rgba(40, 58, 83, 0.3); /* Sombra ao focar */
-    outline: none; /* Remove o outline padrão */
+    border-color: var(--primary-orange); /* Borda laranja ao focar */
+    box-shadow: 0 0 8px rgba(242, 141, 63, 0.4); /* Sombra laranja ao focar */
+    outline: none;
 }
 
 textarea {
@@ -138,7 +138,7 @@ a.button,
     font-size: 1.1em;
     font-weight: bold;
     text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Efeito dinâmico */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra para profundidade */
 }
 
@@ -147,6 +147,7 @@ a.button:hover,
 .button-link:hover {
     background-color: var(--border-orange); /* Laranja mais escuro ao hover */
     transform: translateY(-2px); /* Eleva o botão ligeiramente */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* Sombra mais intensa ao hover */
 }
 
 /* Estilo específico para links de navegação em parágrafos ou áreas secundárias */
@@ -183,13 +184,14 @@ nav.main-nav a {
     text-decoration: none;
     font-size: 1.2em; /* Fonte maior */
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 nav.main-nav a:hover {
     background-color: var(--primary-orange); /* Laranja vibrante ao hover */
     transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilo para a lista de brincadeiras na página de seleção */
@@ -203,8 +205,8 @@ ul.brincadeiras-list {
 
 ul.brincadeiras-list li {
     background-color: var(--white);
-    border: 1px solid var(--primary-orange); /* Borda laranja */
-    border-left: 8px solid var(--primary-orange); /* Uma barra laranja mais grossa na esquerda */
+    border: 1px solid var(--primary-orange);
+    border-left: 10px solid var(--primary-orange); /* Uma barra laranja mais grossa na esquerda */
     border-radius: 8px;
     margin-bottom: 12px;
     padding: 15px 20px;
@@ -212,12 +214,12 @@ ul.brincadeiras-list li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 ul.brincadeiras-list li:hover {
-    transform: translateX(5px); /* Move ligeiramente para a direita ao hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateX(5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 ul.brincadeiras-list li a {
@@ -232,35 +234,237 @@ ul.brincadeiras-list li a:hover {
     color: var(--primary-orange);
 }
 
-/* Responsividade básica */
-@media (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
-    h1 {
-        font-size: 1.8em;
-    }
-    form, .content-box, .flashes, .adicionar-container, .descricao-container, .selecionar-container {
-        max-width: 98%;
-        padding: 20px;
-    }
-    button, a.button, .button-link, nav.main-nav a, p a {
-        padding: 12px 20px;
-        font-size: 0.95em;
-        margin: 8px;
-    }
-    nav.main-nav a {
-        display: block; /* Botões de navegação em bloco em telas pequenas */
-        margin: 10px auto;
-    }
-    input[type="text"], textarea, select {
-        width: calc(100% - 20px);
-    }
-    ul.brincadeiras-list li {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    ul.brincadeiras-list li a {
-        margin-bottom: 5px;
-    }
+/* Estilo para o formulário de seleção (centralizado) */
+#selecionar-form {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: var(--light-grey-bg); /* Fundo leve para o formulário */
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border-orange);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#selecionar-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+#selecionar-form select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid var(--dark-blue);
+    width: 80%;
+    max-width: 350px;
+    margin-bottom: 15px;
+    background-color: var(--white);
+}
+
+#selecionar-form button {
+    padding: 12px 25px;
+    background-color: var(--primary-orange);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#selecionar-form button:hover {
+    background-color: var(--border-orange);
+    transform: translateY(-2px);
+}
+
+/* Estilos para a página de exibição da descrição (centralizada) */
+.descricao-container {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    border: 2px solid var(--primary-orange);
+}
+
+.descricao-container h1 {
+    color: var(--dark-blue); /* Título da descrição em azul */
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 3px solid var(--primary-orange);
+    padding-bottom: 10px;
+}
+
+.descricao-container p {
+    line-height: 1.8; /* Maior espaçamento entre linhas para leitura */
+    text-align: justify; /* Justifica o texto para um visual mais limpo */
+    color: var(--text-color);
+    margin-top: 25px;
+    font-size: 1.1em;
+}
+
+.back-links {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.back-links a {
+    margin: 0 10px;
+    color: var(--dark-blue);
+    text-decoration: none;
+    border: 1px solid var(--dark-blue);
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+}
+
+.back-links a:hover {
+    background-color: var(--dark-blue);
+    color: white;
+}
+
+/* Estilos para a página de adicionar brincadeira */
+.adicionar-container {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+    width: 100%;
+    max-width: 550px;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    border: 2px solid var(--primary-orange);
+}
+
+.adicionar-container h1 {
+    color: var(--dark-blue);
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px solid var(--primary-orange);
+    padding-bottom: 10px;
+}
+
+.adicionar-container div {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.adicionar-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--dark-blue);
+    font-size: 1.1em;
+}
+
+.adicionar-container input,
+.adicionar-container textarea {
+    width: calc(100% - 24px);
+    padding: 12px;
+    margin-top: 5px;
+    border: 2px solid var(--dark-blue);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.adicionar-container button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-orange);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.adicionar-container button:hover {
+    background-color: var(--border-orange);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.adicionar-container p a {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Estilos para a página inicial */
+.home-container {
+    text-align: center;
+}
+
+.home-container h1 {
+    margin-bottom: 40px;
+}
+
+.home-container nav.main-nav {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.home-container nav.main-nav a {
+    display: inline-block;
+    padding: 18px 35px;
+    margin: 15px;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.home-container nav.main-nav a:hover {
+    background-color: var(--primary-orange);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos gerais para links */
+a {
+    color: var(--primary-orange);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--border-orange);
+    text-decoration: underline;
+}
+
+/* Outros estilos */
+.hidden {
+    display: none !important;
+}
+
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.centered-content > * {
+    margin-bottom: 20px;
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.centered-content > *:last-child {
+    margin-bottom: 0;
 }
