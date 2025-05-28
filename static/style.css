@@ -1,24 +1,147 @@
+/* Cores baseadas no logo do Instituto Semear */
+:root {
+    --primary-orange: #F28D3F; /* Laranja principal */
+    --dark-blue: #283A53;     /* Azul marinho */
+    --light-yellow: #FAD990;   /* Amarelo/Bege claro */
+    --border-orange: #DF7B3A; /* Laranja da borda do logo */
+    --light-grey: #f4f4f4;    /* Para fundos leves */
+    --text-color: #333;       /* Cor de texto padrão */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--light-grey); /* Fundo suave */
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    min-height: 100vh; /* Ocupa a altura total da viewport */
+    box-sizing: border-box;
+}
+
+h1 {
+    color: var(--dark-blue);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Estilo para as mensagens flash (erro/sucesso) */
 .flashes {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 500px; /* Limita a largura para melhor leitura */
+    text-align: center;
 }
 
 .flashes li {
-  padding: 8px 15px;
-  border-radius: 4px;
-  margin-bottom: 5px;
-  font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 8px; /* Cantos mais arredondados */
+    margin-bottom: 10px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .flashes .error {
-  background-color: #ffe6e6; /* Fundo vermelho claro */
-  color: #cc0000; /* Texto vermelho escuro */
-  border: 1px solid #ff4500;
+    background-color: #ffe6e6; /* Fundo vermelho claro */
+    color: #cc0000; /* Texto vermelho escuro */
+    border: 1px solid #ff4500;
 }
 
 .flashes .success {
-  background-color: #e6ffe6; /* Fundo verde claro */
-  color: #2e8b57; /* Texto verde escuro */
-  border: 1px solid #2e8b57;
+    background-color: #e6ffe6; /* Fundo verde claro */
+    color: #2e8b57; /* Texto verde escuro */
+    border: 1px solid #2e8b57;
+}
+
+/* Estilo para formulários e containers de conteúdo */
+form, .content-box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Largura máxima para formulários e caixas de conteúdo */
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+div { /* Aplicando a divs dentro de formulários para centralizar campos */
+    margin-bottom: 15px;
+    text-align: center; /* Centraliza os labels e inputs dentro da div */
+}
+
+label {
+    display: block; /* Garante que o label fique acima do input */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+input[type="text"],
+textarea,
+select {
+    width: calc(100% - 20px); /* Ocupa quase toda a largura, com padding */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Inclui padding na largura total */
+}
+
+textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 80px;
+}
+
+button[type="submit"],
+a.button, /* Para links que agem como botões */
+p a { /* Estilo para links em parágrafos, como os de navegação */
+    display: inline-block; /* Permite margin e padding */
+    padding: 10px 20px;
+    margin: 10px 5px; /* Margens em volta dos botões e links */
+    background-color: var(--primary-orange);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none; /* Remove sublinhado de links */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+button[type="submit"]:hover,
+a.button:hover,
+p a:hover {
+    background-color: var(--border-orange); /* Laranja mais escuro ao hover */
+}
+
+/* Estilo específico para links de navegação em parágrafos */
+p a {
+    background-color: transparent; /* Transparente para links de navegação */
+    color: var(--dark-blue);
+    border: 1px solid var(--dark-blue);
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+p a:hover {
+    background-color: var(--dark-blue);
+    color: white;
+}
+
+/* Responsividade básica */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    form, .content-box, .flashes {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
