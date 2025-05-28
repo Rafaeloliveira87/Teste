@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Adicionar Brincadeira</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Adicionar Nova Brincadeira e Descrição</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %}
+    <ul class="flashes">
+      {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %} {% if erro %}
+    <p style="color: red">{{ erro }}</p>
+    {% endif %}
+    <form method="POST" action="/salvar_brincadeira">
+      <div>
+        <label for="nome">Nome da Brincadeira:</label>
+        <input type="text" id="nome" name="nome" required />
+      </div>
+      <div>
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" rows="5" required></textarea>
+      </div>
+      <button type="submit">Salvar Brincadeira</button>
+    </form>
+    <p><a href="/">Voltar para a página inicial</a></p>
+  </body>
+</html>

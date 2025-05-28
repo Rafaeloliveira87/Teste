@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Selecionar Brincadeira</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Selecionar Brincadeira</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %}
+    <ul class="flashes">
+      {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+    <form method="GET" action="/exibir_descricao">
+      <div>
+        <label for="brincadeira_id">Selecione uma brincadeira:</label>
+        <select id="brincadeira_id" name="brincadeira_id">
+          {% for brincadeira in brincadeiras %}
+          <option value="{{ brincadeira.id }}">{{ brincadeira.nome }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit">Mostrar Descrição</button>
+    </form>
+    <p><a href="/">Voltar para a página inicial</a></p>
+  </body>
+</html>
