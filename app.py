@@ -9,13 +9,12 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:/
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'sua_chave_secreta_padrao_muito_segura_e_longa_aqui')
 
-db = SQLAlchemy(app) # Inicializa o SQLAlchemy com seu app Flask
+db = SQLAlchemy(app)
 
 # --- MUITO IMPORTANTE: CRIE AS TABELAS AQUI! ---
-# Isso garante que as tabelas sejam criadas no banco de dados do Render
-# quando o aplicativo for iniciado.
 with app.app_context():
     db.create_all()
+
 
 # --- DEFINIÇÃO DO MODELO (SUA TABELA 'BRINCADEIRAS') ---
 class Brincadeira(db.Model):
