@@ -1,16 +1,17 @@
 /* Cores baseadas no logo do Instituto Semear */
 :root {
-    --primary-orange: #F28D3F; /* Laranja principal */
-    --dark-blue: #283A53;     /* Azul marinho */
-    --light-yellow: #FAD990;   /* Amarelo/Bege claro */
-    --border-orange: #DF7B3A; /* Laranja da borda do logo */
-    --light-grey: #f4f4f4;    /* Para fundos leves */
-    --text-color: #333;       /* Cor de texto padrão */
+    --primary-orange: #F28D3F; /* Laranja principal do logo */
+    --dark-blue: #283A53;     /* Azul marinho do logo */
+    --light-yellow: #FAD990;   /* Amarelo/Bege claro do logo */
+    --border-orange: #DF7B3A; /* Um tom mais escuro de laranja para hover/bordas */
+    --white: #ffffff;
+    --light-grey-bg: #f8f8f8; /* Fundo suave para contraste */
+    --text-color: #444;       /* Cor de texto padrão */
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: var(--light-grey); /* Fundo suave */
+    font-family: 'Arial', sans-serif;
+    background-color: var(--light-yellow); /* Fundo com o amarelo suave do logo */
     color: var(--text-color);
     margin: 0;
     padding: 20px;
@@ -19,30 +20,42 @@ body {
     align-items: center; /* Centraliza o conteúdo horizontalmente */
     min-height: 100vh; /* Ocupa a altura total da viewport */
     box-sizing: border-box;
+    /* Adicionar um padrão sutil ou gradiente se quiser algo mais dinâmico, por exemplo: */
+    /* background: linear-gradient(to bottom right, var(--light-yellow), #fdf5e6); */
 }
 
 h1 {
-    color: var(--dark-blue);
+    color: var(--dark-blue); /* Títulos em azul escuro */
     text-align: center;
     margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-orange); /* Linha laranja abaixo do título */
+    width: fit-content; /* Ajusta a largura da linha ao texto */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Estilo para as mensagens flash (erro/sucesso) */
 .flashes {
     list-style: none;
     padding: 0;
-    margin: 10px 0;
+    margin: 15px 0;
     width: 100%;
-    max-width: 500px; /* Limita a largura para melhor leitura */
+    max-width: 550px; /* Limita a largura para melhor leitura */
     text-align: center;
 }
 
 .flashes li {
-    padding: 8px 15px;
-    border-radius: 8px; /* Cantos mais arredondados */
+    padding: 12px 20px;
+    border-radius: 10px; /* Cantos mais arredondados */
     margin-bottom: 10px;
     font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+    transition: transform 0.2s ease-in-out; /* Efeito dinâmico ao passar o mouse */
+}
+
+.flashes li:hover {
+    transform: translateY(-2px); /* Eleva um pouco a caixa */
 }
 
 .flashes .error {
@@ -57,81 +70,166 @@ h1 {
     border: 1px solid #2e8b57;
 }
 
-/* Estilo para formulários e containers de conteúdo */
-form, .content-box {
-    background-color: #fff;
+/* Estilo para formulários e containers de conteúdo (caixas brancas) */
+form, .content-box, .adicionar-container, .descricao-container, .selecionar-container {
+    background-color: var(--white);
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px; /* Cantos bem arredondados */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18); /* Sombra mais suave e evidente */
     width: 100%;
-    max-width: 500px; /* Largura máxima para formulários e caixas de conteúdo */
-    margin-bottom: 20px;
+    max-width: 550px; /* Largura máxima para formulários e caixas de conteúdo */
+    margin-bottom: 25px;
     box-sizing: border-box;
+    border: 1px solid var(--border-orange); /* Borda com a cor da borda do logo */
 }
 
-div { /* Aplicando a divs dentro de formulários para centralizar campos */
-    margin-bottom: 15px;
-    text-align: center; /* Centraliza os labels e inputs dentro da div */
+/* Centraliza os labels e inputs dentro de divs (se usados) */
+div {
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 label {
-    display: block; /* Garante que o label fique acima do input */
-    margin-bottom: 5px;
+    display: block;
+    margin-bottom: 8px;
     font-weight: bold;
-    color: var(--dark-blue);
+    color: var(--dark-blue); /* Labels em azul escuro */
+    font-size: 1.1em;
 }
 
 input[type="text"],
 textarea,
 select {
-    width: calc(100% - 20px); /* Ocupa quase toda a largura, com padding */
-    padding: 10px;
+    width: calc(100% - 24px); /* Ocupa quase toda a largura, com padding e borda */
+    padding: 12px;
     margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box; /* Inclui padding na largura total */
+    border: 2px solid var(--primary-orange); /* Borda laranja nos inputs */
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Efeito dinâmico */
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--dark-blue); /* Borda azul ao focar */
+    box-shadow: 0 0 8px rgba(40, 58, 83, 0.3); /* Sombra ao focar */
+    outline: none; /* Remove o outline padrão */
 }
 
 textarea {
-    resize: vertical; /* Permite redimensionar verticalmente */
-    min-height: 80px;
+    resize: vertical;
+    min-height: 100px;
 }
 
+/* Estilo para botões e links que agem como botões */
 button[type="submit"],
-a.button, /* Para links que agem como botões */
-p a { /* Estilo para links em parágrafos, como os de navegação */
-    display: inline-block; /* Permite margin e padding */
-    padding: 10px 20px;
-    margin: 10px 5px; /* Margens em volta dos botões e links */
-    background-color: var(--primary-orange);
+a.button,
+.button-link {
+    display: inline-block;
+    padding: 15px 30px; /* Botões maiores e mais chamativos */
+    margin: 12px 8px; /* Margens generosas para espaçamento */
+    background-color: var(--primary-orange); /* Botões em laranja vibrante */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
-    text-decoration: none; /* Remove sublinhado de links */
-    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efeito dinâmico */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra para profundidade */
 }
 
 button[type="submit"]:hover,
 a.button:hover,
-p a:hover {
+.button-link:hover {
     background-color: var(--border-orange); /* Laranja mais escuro ao hover */
+    transform: translateY(-2px); /* Eleva o botão ligeiramente */
 }
 
-/* Estilo específico para links de navegação em parágrafos */
+/* Estilo específico para links de navegação em parágrafos ou áreas secundárias */
 p a {
-    background-color: transparent; /* Transparente para links de navegação */
-    color: var(--dark-blue);
+    background-color: var(--dark-blue); /* Links de navegação em azul escuro */
+    color: white;
     border: 1px solid var(--dark-blue);
-    padding: 8px 15px;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 8px;
     transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: normal;
 }
 
 p a:hover {
-    background-color: var(--dark-blue);
+    background-color: var(--primary-orange); /* Laranja ao hover para contraste */
     color: white;
+    border-color: var(--primary-orange);
+}
+
+/* Estilo para a navegação principal (menu inicial) */
+nav.main-nav {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+nav.main-nav a {
+    display: inline-block;
+    padding: 18px 35px; /* Botões maiores para a navegação principal */
+    margin: 15px;
+    background-color: var(--dark-blue); /* Azul escuro para os botões principais */
+    color: var(--white);
+    border-radius: 12px; /* Cantos mais arredondados */
+    text-decoration: none;
+    font-size: 1.2em; /* Fonte maior */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav.main-nav a:hover {
+    background-color: var(--primary-orange); /* Laranja vibrante ao hover */
+    transform: translateY(-3px);
+}
+
+/* Estilo para a lista de brincadeiras na página de seleção */
+ul.brincadeiras-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 550px;
+}
+
+ul.brincadeiras-list li {
+    background-color: var(--white);
+    border: 1px solid var(--primary-orange); /* Borda laranja */
+    border-left: 8px solid var(--primary-orange); /* Uma barra laranja mais grossa na esquerda */
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+ul.brincadeiras-list li:hover {
+    transform: translateX(5px); /* Move ligeiramente para a direita ao hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+ul.brincadeiras-list li a {
+    text-decoration: none;
+    color: var(--dark-blue);
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+ul.brincadeiras-list li a:hover {
+    text-decoration: underline;
+    color: var(--primary-orange);
 }
 
 /* Responsividade básica */
@@ -139,9 +237,30 @@ p a:hover {
     body {
         padding: 10px;
     }
-    form, .content-box, .flashes {
-        max-width: 100%;
-        margin-left: 0;
-        margin-right: 0;
+    h1 {
+        font-size: 1.8em;
+    }
+    form, .content-box, .flashes, .adicionar-container, .descricao-container, .selecionar-container {
+        max-width: 98%;
+        padding: 20px;
+    }
+    button, a.button, .button-link, nav.main-nav a, p a {
+        padding: 12px 20px;
+        font-size: 0.95em;
+        margin: 8px;
+    }
+    nav.main-nav a {
+        display: block; /* Botões de navegação em bloco em telas pequenas */
+        margin: 10px auto;
+    }
+    input[type="text"], textarea, select {
+        width: calc(100% - 20px);
+    }
+    ul.brincadeiras-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    ul.brincadeiras-list li a {
+        margin-bottom: 5px;
     }
 }
