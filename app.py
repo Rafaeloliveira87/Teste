@@ -11,9 +11,6 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'sua_chave_secreta_padra
 
 db = SQLAlchemy(app)
 
-# --- MUITO IMPORTANTE: CRIE AS TABELAS AQUI! ---
-with app.app_context():
-    db.create_all()
 
 
 # --- DEFINIÇÃO DO MODELO (SUA TABELA 'BRINCADEIRAS') ---
